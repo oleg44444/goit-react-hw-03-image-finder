@@ -5,6 +5,8 @@ function Loader() {
   const loaderStyles = {
     display: 'flex',
     justifyContent: 'center',
+
+    height: '100vh',
   };
 
   return (
