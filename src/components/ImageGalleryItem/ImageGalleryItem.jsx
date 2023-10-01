@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
+import { Li, Img } from './ImageGalleryItem.styled';
 
 class ImageGalleryItem extends Component {
   render() {
     const { images, handleImageClick } = this.props;
 
     return (
-      <div>
+      <>
         {images.map(image => (
-          <li key={image.id} className="imageGalleryItem">
-            <img
+          <Li key={image.id}>
+            <Img
               src={image.webformatURL}
               alt={image.id}
               onClick={() => handleImageClick(image)}
             />
-          </li>
+          </Li>
         ))}
-      </div>
+      </>
     );
   }
 }

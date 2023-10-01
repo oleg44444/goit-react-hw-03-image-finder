@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-export const Header = styled.Header`
+export const Header = styled.header`
   top: 0;
   left: 0;
   position: sticky;

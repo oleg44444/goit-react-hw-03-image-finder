@@ -4,6 +4,7 @@ import ImageGalleryItem from '../ImageGalleryItem/ImageGalleryItem';
 import Button from '../Button/Button';
 import Loader from '../Loader/Loader';
 import Modal from '../Modal/Modal';
+import { List } from './ImageGallery.styled';
 
 class ImageGallery extends Component {
   state = {
@@ -65,13 +66,13 @@ class ImageGallery extends Component {
     const { images, isLoading, selectedImage } = this.state;
 
     return (
-      <div>
-        <ul className="imageGallery">
+      <>
+        <List>
           <ImageGalleryItem
             images={images}
             handleImageClick={this.handleImageClick}
           />
-        </ul>
+        </List>
         {isLoading ? (
           <Loader />
         ) : (
@@ -81,7 +82,7 @@ class ImageGallery extends Component {
         {selectedImage && (
           <Modal image={selectedImage} onClose={this.closeModal} />
         )}
-      </div>
+      </>
     );
   }
 }

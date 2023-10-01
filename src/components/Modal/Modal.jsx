@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { createPortal } from 'react-dom';
 import 'basiclightbox/dist/basicLightbox.min.css';
+import { Overlay, ModalDiv } from './Modal.styled';
 
 const modalRoot = document.querySelector('#modal-root');
 
@@ -31,11 +32,11 @@ export default class Modal extends Component {
       return null;
     }
     return createPortal(
-      <div className="Overlay" onClick={this.handleOverlayClick}>
-        <div className="Modal">
+      <Overlay onClick={this.handleOverlayClick}>
+        <ModalDiv>
           <img src={image.largeImageURL} alt={image.tags} />
-        </div>
-      </div>,
+        </ModalDiv>
+      </Overlay>,
       modalRoot
     );
   }
